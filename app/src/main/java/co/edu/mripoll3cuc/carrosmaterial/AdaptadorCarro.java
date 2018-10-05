@@ -1,5 +1,6 @@
 package co.edu.mripoll3cuc.carrosmaterial;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +13,11 @@ import java.util.ArrayList;
 
 public class AdaptadorCarro extends RecyclerView.Adapter <AdaptadorCarro.CarroViewHolder> {
     private ArrayList<Carro> carros;
+    private Context contexto;
 
-    public AdaptadorCarro(ArrayList<Carro> carros){
+    public AdaptadorCarro(ArrayList<Carro> carros, Context contexto){
         this.carros=carros;
+        this.contexto=contexto;
     }
 
     @Override
@@ -28,8 +31,8 @@ public class AdaptadorCarro extends RecyclerView.Adapter <AdaptadorCarro.CarroVi
         Carro c = carros.get(position);
         holder.foto.setImageResource(c.getFoto());
         holder.placa.setText(c.getPlaca());
-        holder.color.setSelection(c.getColor());
-        holder.marca.setSelection(c.getMarca());
+        holder.color.setText(contexto.getResources().getStringArray(R.array.color)[c.getColor()]);
+        holder.marca.setText(contexto.getResources().getStringArray(R.array.marca)[c.getMarca()]);
         holder.precio.setText(c.getPrecio());
     }
 
@@ -42,8 +45,8 @@ public class AdaptadorCarro extends RecyclerView.Adapter <AdaptadorCarro.CarroVi
     public static class CarroViewHolder extends RecyclerView.ViewHolder{
         private ImageView foto;
         private TextView placa;
-        private Spinner color;
-        private Spinner marca;
+        private TextView color;
+        private TextView marca;
         private TextView precio;
         private View v;
 

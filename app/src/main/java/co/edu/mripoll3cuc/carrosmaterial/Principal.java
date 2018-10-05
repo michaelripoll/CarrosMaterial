@@ -31,7 +31,7 @@ public class Principal extends AppCompatActivity {
         lstOpciones = findViewById(R.id.lstCarros);
         carros = Datos.obtener();
 
-        AdaptadorCarro adaptadorCarro = new AdaptadorCarro(carros);
+        AdaptadorCarro adaptadorCarro = new AdaptadorCarro(carros, this);
 
         llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
