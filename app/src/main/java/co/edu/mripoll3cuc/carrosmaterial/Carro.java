@@ -54,4 +54,8 @@ public class Carro {
     public void setPrecio(String precio) {
         this.precio = precio;
     }
+
+    public void guardar(){
+        Datos.agregar(this);
+    }
 }

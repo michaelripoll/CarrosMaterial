@@ -19,6 +19,7 @@
     <string name="mensaje_guardado">Persona guardada exitosamente</string>
 
     <string-array name="color">
+        <item></item>
         <item>@string/blanco</item>
         <item>@string/negro</item>
         <item>@string/azul</item>
@@ -27,6 +28,7 @@
     </string-array>
 
     <string-array name="marca">
+        <item></item>
         <item>@string/chevrolet</item>
         <item>@string/mazda</item>
         <item>@string/nissan</item>

@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class AdaptadorCarro {
+public class AdaptadorCarro extends RecyclerView.Adapter <AdaptadorCarro.CarroViewHolder> {
     private ArrayList<Carro> carros;
 
     public AdaptadorCarro(ArrayList<Carro> carros){
@@ -32,6 +32,7 @@ public class AdaptadorCarro {
         holder.marca.setSelection(c.getMarca());
         holder.precio.setText(c.getPrecio());
     }
+
 
     @Override
     public int getItemCount() {
